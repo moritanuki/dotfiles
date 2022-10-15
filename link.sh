@@ -15,8 +15,14 @@ for f in .??*; do
 	[[ "$f" == ".gitconfig" ]] && continue
 	[[ "$f" == ".gitignore" ]] && continue
 	[[ "$f" == ".DS_Store" ]] && continue
+	[[ "$f" == ".vscode" ]] && continue
 	[[ "$f" =~ .swp$ ]] && continue
 
 	# シンボリックリンクを作成
 	ln -snfv ${DOTFILES_DIR}/$f ~
 done
+
+# ハードリンクの作成
+mkdir -p ~/.config/nvim
+ln -fv nvim/init.vim ~/.config/nvim/init.vim
+ln -fv starship.toml ~/.config/starship.toml

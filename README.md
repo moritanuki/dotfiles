@@ -11,8 +11,3 @@ cd dotfiles
 ```
 sh link.sh
 ```
-
-3. create link for starship
-```
-ln starship.toml ~/.config/starship.toml
-```
