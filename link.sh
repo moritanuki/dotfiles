@@ -23,6 +23,14 @@ for f in .??*; do
 done
 
 # ハードリンクの作成
-mkdir -p ~/.config/nvim
-ln -fv nvim/init.vim ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim/lua
+
+# TODO: forで回す
+ln -fv nvim/init.lua ~/.config/nvim/init.lua
+ln -fv nvim/lua/base.lua ~/.config/nvim/lua/base.lua
+ln -fv nvim/lua/plugins.lua ~/.config/nvim/lua/plugins.lua
 ln -fv starship.toml ~/.config/starship.toml
+
+# parker.nvimのインストール
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
