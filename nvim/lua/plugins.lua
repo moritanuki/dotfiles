@@ -25,7 +25,7 @@ vim.cmd([[
 return require('packer').startup(function(use)
   -- parcker
   use { 'wbthomason/packer.nvim' }
-  -- line theme
+  -- status line
   use {
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'kyazdani42/nvim-web-devicons' }
