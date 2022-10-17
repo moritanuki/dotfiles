@@ -1,11 +1,33 @@
-vim.cmd [[packadd packer.nvim]]
+-- packer自動clone
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
 
--- FIXME: can not read
-require('packer').startup(function()    
-  use{ 'wbthomason/packer.nvim', opt = true}
-  use { "EdenEast/nightfox.nvim", opt = true, run = ":NightfoxCompile" }
+local packer_bootstrap = ensure_packer()
+
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
+-----------------
+-- plugins
+-----------------
+return require('packer').startup(function(use)
+  -- parckerの設定
+  use { 'wbthomason/packer.nvim'}
+  -- color scheme
+  use { "EdenEast/nightfox.nvim", run = ":NightfoxCompile" }
+  -- file tree
+  use { 'antoinemadec/FixCursorHold.nvim'}
+  use { 'lambdalisue/fern.vim' }
 end)
-
-vim.cmd("colorscheme nightfox")
-
-print('plugins.lua')

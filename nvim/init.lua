@@ -1,4 +1,5 @@
 require("base")
 require("plugins")
 
-print('init')
+vim.cmd[[autocmd BufWritePost plugins.lua PackerInstall]]
+vim.cmd("colorscheme nightfox")
