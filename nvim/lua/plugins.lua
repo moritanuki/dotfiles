@@ -23,11 +23,15 @@ vim.cmd([[
 -- plugins
 -----------------
 return require('packer').startup(function(use)
-  -- parckerの設定
-  use { 'wbthomason/packer.nvim'}
+  -- parcker
+  use { 'wbthomason/packer.nvim' }
+  -- line theme
+  use {
+	  'nvim-lualine/lualine.nvim',
+	  requires = { 'kyazdani42/nvim-web-devicons' }
+	}
+  -- file tree
+  use { "lambdalisue/fern.vim" }
   -- color scheme
   use { "EdenEast/nightfox.nvim", run = ":NightfoxCompile" }
-  -- file tree
-  use { 'antoinemadec/FixCursorHold.nvim'}
-  use { 'lambdalisue/fern.vim' }
 end)
