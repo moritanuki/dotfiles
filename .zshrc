@@ -2,6 +2,9 @@
 # setting
 ################
 
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 # starship
 eval "$(starship init zsh)"
 
