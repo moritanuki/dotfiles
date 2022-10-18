@@ -34,4 +34,6 @@ return require('packer').startup(function(use)
   use { "lambdalisue/fern.vim" }
   -- color scheme
   use { "EdenEast/nightfox.nvim", run = ":NightfoxCompile" }
+  -- language server
+  use { 'neoclide/coc.nvim', branch = 'release' }
 end)
