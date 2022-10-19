@@ -1,15 +1,27 @@
+[[battery.display]]
+threshold = 100
+style = "bold #8cd0d3"
+
 [directory]
 truncation_length = 10
 truncate_to_repo = false
+style = "bold #dfdfdf"
+
+[git_branch]
+style = "bold #e89393"
+
+[git_status]
+style = "bold #e89393"
 
 [nodejs]
-style = "bold #C2FFC9"
+style = "bold #80d4aa"
 
-[[battery.display]]
-threshold = 100
-style = "bold blue"
+[package]
+style = "bold #dfaf8f"
+
+[rust]
+style = "bold #dca3a3" 
 
 [time]
-#時間の表示をオンにして12時間表示に
 disabled = false
-use_12hr = true
+style = "bold #efef8f"
