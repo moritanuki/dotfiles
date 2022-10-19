@@ -30,3 +30,5 @@ require("modes").setup({
 	ignore_filetypes = { "NvimTree", "TelescopePrompt" }
 })
 require('nvim_comment').setup()
+
+vim.cmd("let g:fern#default_hidden=1")
