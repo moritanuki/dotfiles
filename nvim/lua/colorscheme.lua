@@ -1,2 +1,1 @@
--- nightfox
-vim.cmd("colorscheme nordfox")
+vim.cmd("colorscheme zenburn")
