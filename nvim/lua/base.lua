@@ -3,6 +3,10 @@ vim.wo.number = true
 -- special character display
 vim.opt.list = true
 vim.opt.listchars = {tab='>-', trail='*', nbsp='+'}
+-- spell check
+vim.opt.spell = true
+vim.opt.spelllang = 'en'
+vim.opt.spellsuggest=best,9
 -- parentheses linkage
 vim.opt.showmatch = true
 vim.opt.matchtime = 1
