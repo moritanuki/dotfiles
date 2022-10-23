@@ -70,4 +70,7 @@ return require("packer").startup(function(use)
     -- optional for icon support
     requires = { "kyazdani42/nvim-web-devicons" }
   }
+  -- git diff
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 end)
+
