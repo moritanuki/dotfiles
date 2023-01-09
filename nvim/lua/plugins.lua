@@ -39,7 +39,6 @@ return require("packer").startup(function(use)
   use "lambdalisue/fern.vim"
   use "lambdalisue/fern-git-status.vim"
   -- color scheme
-  use { "EdenEast/nightfox.nvim", run = ":NightfoxCompile" }
   use {
     "phha/zenburn.nvim",
     config = function() require("zenburn").setup() end
