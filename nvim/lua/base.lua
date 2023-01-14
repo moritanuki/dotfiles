@@ -1,5 +1,5 @@
 -- number display
-vim.wo.number = true
+vim.opt.number = true
 -- special character display
 vim.opt.list = true
 vim.opt.listchars = {tab='>-', trail='*', nbsp='+'}

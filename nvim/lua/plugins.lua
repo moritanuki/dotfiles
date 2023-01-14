@@ -64,6 +64,7 @@ return require("packer").startup(function(use)
     end
   })
   -- fuzzy finder
+  use { "junegunn/fzf", run = ":call fzf#install()" }
   use {
     "ibhagwan/fzf-lua",
     -- optional for icon support
@@ -71,5 +72,21 @@ return require("packer").startup(function(use)
   }
   -- git diff
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  -- noice
+  use({
+  "folke/noice.nvim",
+  config = function()
+    require("noice").setup({
+        -- add any options here
+    })
+  end,
+  requires = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
+    }
+})
 end)
-
