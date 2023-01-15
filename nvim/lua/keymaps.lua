@@ -9,6 +9,7 @@ key = vim.keymap
 
 -- keymap
 g.mapleader = " "
+key.set('n', '<Leader><Leader>', '<cmd>source  ~/.config/nvim/init.lua<cr> <cmd>lua print("Reloaded init.lua")<cr>')
 
 -- fern
 key.set('n', '<C-e>', ':Fern . -reveal=% -drawer -toggle -width=33<CR>')
