@@ -1,12 +1,3 @@
--- alias
-g   = vim.g
-o   = vim.o
-opt = vim.opt
-cmd = vim.cmd
-fn  = vim.fn
-api = vim.api
-key = vim.keymap
-
 -- keymap
 g.mapleader = " "
 key.set('n', '<Leader><Leader>', '<cmd>source  ~/.config/nvim/init.lua<cr> <cmd>lua print("Reloaded init.lua")<cr>')
