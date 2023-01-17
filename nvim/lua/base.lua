@@ -1,26 +1,28 @@
 -- number display
-vim.opt.number = true
+opt.number = true
 -- special character display
-vim.opt.list = true
-vim.opt.listchars = {tab='>-', trail='*', nbsp='+'}
+opt.list = true
+opt.listchars = {tab='>-', trail='*', nbsp='+'}
 -- spell check
-vim.opt.spell = true
-vim.opt.spelllang = 'en'
-vim.opt.spellsuggest=best,9
+opt.spell = true
+opt.spelllang = 'en'
+opt.spellsuggest=best,9
 -- parentheses linkage
-vim.opt.showmatch = true
-vim.opt.matchtime = 1
+opt.showmatch = true
+opt.matchtime = 1
 -- help in japanese
-vim.opt.helplang = 'ja'
+opt.helplang = 'ja'
 -- tab
-vim.opt.showtabline = 2
-vim.opt.expandtab = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+opt.showtabline = 2
+opt.expandtab = true
+opt.tabstop = 2
+opt.shiftwidth = 2
 -- search
 -- ignore case
-vim.opt.ignorecase = true
+opt.ignorecase = true
 -- determine upper case
-vim.opt.smartcase = true
+opt.smartcase = true
 -- back to top
-vim.opt.wrapscan = true
+opt.wrapscan = true
+-- clipboad
+opt.clipboard:append({ fn.has('mac') == 4 and 'unnamed' or 'unnamedplus' })
