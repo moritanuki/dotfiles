@@ -47,6 +47,7 @@ return require("packer").startup(function(use)
     "akinsho/bufferline.nvim", tag = "v3.*",
     requires = "kyazdani42/nvim-web-devicons"
   }
+  require("bufferline").setup{}
   -- color scheme
   use {
     "phha/zenburn.nvim",
@@ -60,6 +61,7 @@ return require("packer").startup(function(use)
       require("todo-comments").setup {}
     end
   }
+  require('nvim_comment').setup()
   -- mode colors
   use({
     "mvllow/modes.nvim",
@@ -67,6 +69,31 @@ return require("packer").startup(function(use)
     config = function()
       require("modes").setup()
     end
+  })
+  require("modes").setup({
+    colors = {
+      copy = "#f5c359",
+      delete = "#c75c6a",
+      insert = "#78ccc5",
+      visual = "#9745be",
+    },
+
+    -- Set opacity for cursorline and number background
+    line_opacity = 0.15,
+
+    -- Enable cursor highlights
+    set_cursor = true,
+
+    -- Enable cursorline initially, and disable cursorline for inactive windows
+    -- or ignored filetypes
+    set_cursorline = true,
+
+    -- Enable line number highlights to match cursorline
+    set_number = true,
+
+    -- Disable modes highlights in specified filetypes
+    -- Please PR commonly ignored filetypes
+    ignore_filetypes = { "NvimTree", "TelescopePrompt" }
   })
   -- noice
   use({
@@ -79,6 +106,25 @@ return require("packer").startup(function(use)
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
+  })
+  -- noice setting
+  require("noice").setup({
+    lsp = {
+      -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+      override = {
+        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        ["vim.lsp.util.stylize_markdown"] = true,
+        ["cmp.entry.get_documentation"] = true,
+      },
+    },
+    -- you can enable a preset for easier configuration
+    presets = {
+      bottom_search = true, -- use a classic bottom cmdline for search
+      command_palette = true, -- position the cmdline and popupmenu together
+      long_message_to_split = true, -- long messages will be sent to a split
+      inc_rename = false, -- enables an input dialog for inc-rename.nvim
+      lsp_doc_border = false, -- add a border to hover docs and signature help
+    },
   })
   -- telescope
   use {
