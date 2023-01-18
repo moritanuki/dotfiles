@@ -1,24 +1,5 @@
 -- packer自動clone
 cmd.packadd 'packer.nvim'
--- local ensure_packer = function()
---   local fn = vim.fn
---   local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
---   if fn.empty(fn.glob(install_path)) > 0 then
---     fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
---     vim.cmd [[packadd packer.nvim]]
---     return true
---   end
---   return false
--- end
---
--- local packer_bootstrap = ensure_packer()
---
--- vim.cmd([[
---   augroup packer_user_config
---     autocmd!
---     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
---   augroup end
--- ]])
 
 -----------------
 -- plugins
@@ -26,17 +7,13 @@ cmd.packadd 'packer.nvim'
 return require("packer").startup(function(use)
   -- parcker
   use "wbthomason/packer.nvim"
-  -- file tree
-  use "lambdalisue/fern.vim"
+  use "lambdalisue/fern.vim"     -- file tree
   use "lambdalisue/fern-git-status.vim"
-  -- comment out
-  use "terrortylor/nvim-comment"
-  -- git
-  use 'kdheepak/lazygit.nvim'
-  -- language server
-  use { "neoclide/coc.nvim", branch = "release" }
-  -- git diff
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use "terrortylor/nvim-comment" -- comment out
+  use 'kdheepak/lazygit.nvim'    -- git
+  use 'junegunn/vim-easy-align'  -- text align
+  use { "neoclide/coc.nvim",      branch   = "release"               } -- language server
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' } -- git diff
   -- status line
   use {
    "nvim-lualine/lualine.nvim",
@@ -72,7 +49,7 @@ return require("packer").startup(function(use)
   })
   require("modes").setup({
     colors = {
-      copy = "#f5c359",
+      copy   = "#f5c359",
       delete = "#c75c6a",
       insert = "#78ccc5",
       visual = "#9745be",
@@ -113,17 +90,17 @@ return require("packer").startup(function(use)
       -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-        ["vim.lsp.util.stylize_markdown"] = true,
-        ["cmp.entry.get_documentation"] = true,
+        ["vim.lsp.util.stylize_markdown"]                = true,
+        ["cmp.entry.get_documentation"]                  = true,
       },
     },
     -- you can enable a preset for easier configuration
     presets = {
-      bottom_search = true, -- use a classic bottom cmdline for search
-      command_palette = true, -- position the cmdline and popupmenu together
-      long_message_to_split = true, -- long messages will be sent to a split
-      inc_rename = false, -- enables an input dialog for inc-rename.nvim
-      lsp_doc_border = false, -- add a border to hover docs and signature help
+      bottom_search         = true,  -- use a classic bottom cmdline for search
+      command_palette       = true,  -- position the cmdline and popupmenu together
+      long_message_to_split = true,  -- long messages will be sent to a split
+      inc_rename            = false, -- enables an input dialog for inc-rename.nvim
+      lsp_doc_border        = false, -- add a border to hover docs and signature help
     },
   })
   -- telescope
