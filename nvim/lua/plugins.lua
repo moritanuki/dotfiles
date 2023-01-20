@@ -1,5 +1,5 @@
 -- packer自動clone
-cmd.packadd 'packer.nvim'
+cmd.packadd "packer.nvim"
 
 -----------------
 -- plugins
@@ -10,10 +10,10 @@ return require("packer").startup(function(use)
   use "lambdalisue/fern.vim"     -- file tree
   use "lambdalisue/fern-git-status.vim"
   use "terrortylor/nvim-comment" -- comment out
-  use 'kdheepak/lazygit.nvim'    -- git
-  use 'junegunn/vim-easy-align'  -- text align
+  use "kdheepak/lazygit.nvim"    -- git
+  use "junegunn/vim-easy-align"  -- text align
   use { "neoclide/coc.nvim",      branch   = "release"               } -- language server
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' } -- git diff
+  use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" } -- git diff
   -- status line
   use {
    "nvim-lualine/lualine.nvim",
@@ -38,7 +38,7 @@ return require("packer").startup(function(use)
       require("todo-comments").setup {}
     end
   }
-  require('nvim_comment').setup()
+  require("nvim_comment").setup()
   -- mode colors
   use({
     "mvllow/modes.nvim",
@@ -105,7 +105,16 @@ return require("packer").startup(function(use)
   })
   -- telescope
   use {
-   'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
+   "nvim-telescope/telescope.nvim", tag = "0.1.0",
+    requires = { {"nvim-lua/plenary.nvim"} }
   }
+  use({
+      "kylechui/nvim-surround",
+      tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+      config = function()
+          require("nvim-surround").setup({
+              -- Configuration here, or leave empty to use defaults
+          })
+      end
+  })
 end)
