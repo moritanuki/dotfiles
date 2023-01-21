@@ -1,6 +1,11 @@
 -- packer自動clone
 cmd.packadd "packer.nvim"
 
+-- telescope searcher
+local telescope_config = function()
+   require('telescope').load_extension('fzy_native')
+end
+
 -----------------
 -- plugins
 -----------------
@@ -105,9 +110,23 @@ return require("packer").startup(function(use)
   })
   -- telescope
   use {
-   "nvim-telescope/telescope.nvim", tag = "0.1.0",
-    requires = { {"nvim-lua/plenary.nvim"} }
+   'nvim-telescope/telescope.nvim',
+    tag = '0.1.0',
+    config = telescope_config,
+    requires = {
+        'nvim-lua/plenary.nvim',
+        'kyazdani42/nvim-web-devicons',
+        'nvim-treesitter/nvim-treesitter',
+        'nvim-telescope/telescope-fzy-native.nvim',
+    },
+    extensions = {
+        fzy_native = {
+            override_generic_sorter = false,
+            override_file_sorter = true,
+        }
+    },
   }
+
   use({
       "kylechui/nvim-surround",
       tag = "*", -- Use for stability; omit to use `main` branch for the latest features
