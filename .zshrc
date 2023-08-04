@@ -26,3 +26,6 @@ alias gst='git status'
 alias glo='git log --all --oneline --graph'
 alias gbr='git branch'
 alias gch='git checkout'
+
+# lazygit
+alias lg='lazygit'

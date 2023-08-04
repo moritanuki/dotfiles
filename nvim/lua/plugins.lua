@@ -136,4 +136,9 @@ return require("packer").startup(function(use)
           })
       end
   })
+  use {
+    'fhill2/xplr.nvim',
+    run = function() require'xplr'.install({hide=true}) end,
+    requires = {{'nvim-lua/plenary.nvim'}, {'MunifTanjim/nui.nvim'}}
+  }
 end)

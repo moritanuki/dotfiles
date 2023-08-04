@@ -2,6 +2,12 @@
 g.mapleader = " "
 key.set('n', '<Leader><Leader>', '<cmd>source  ~/.config/nvim/init.lua<cr> <cmd>lua print("Reloaded init.lua")<cr>')
 
+key.set('n', 'gj', 'j')
+key.set('n', 'gk', 'k')
+key.set('n', 'j', 'gj')
+key.set('n', 'k', 'gk')
+
+
 -- Split window
 key.set('n', 'ss', ':split<CR>eturn><C-w>w')
 key.set('n', 'sv', ':vsplit<CR>eturn><C-w>w')
