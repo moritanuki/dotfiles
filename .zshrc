@@ -2,9 +2,6 @@
 # setting
 ################
 
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
 # starship
 eval "$(starship init zsh)"
 
@@ -14,6 +11,7 @@ eval "$(starship init zsh)"
 ################
 
 #exa
+alias ls='exa'
 alias tree='exa --tree --git-ignore'
 
 # git
@@ -29,3 +27,5 @@ alias gch='git checkout'
 
 # lazygit
 alias lg='lazygit'
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh

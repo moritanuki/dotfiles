@@ -21,15 +21,3 @@ for f in .??*; do
 	# シンボリックリンクを作成
 	ln -snfv ${DOTFILES_DIR}/$f ~
 done
-
-# ハードリンクの作成
-mkdir -p ~/.config/nvim/lua
-
-# TODO: forで回す
-ln -fv nvim/init.lua ~/.config/nvim/init.lua
-ln -fv nvim/lua/base.lua ~/.config/nvim/lua/base.lua
-ln -fv nvim/lua/keymaps.lua ~/.config/nvim/lua/keymaps.lua
-ln -fv nvim/lua/plugins.lua ~/.config/nvim/lua/plugins.lua
-ln -fv nvim/lua/colorscheme.lua ~/.config/nvim/lua/colorscheme.lua
-ln -fv nvim/lua/statusline.lua ~/.config/nvim/lua/statusline.lua
-ln -fv starship.toml ~/.config/starship.toml

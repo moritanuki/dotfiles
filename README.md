@@ -13,13 +13,3 @@ cd dotfiles
 ```
 sh link.sh
 ```
-
-3. read plugins
-
-```
-nvim
-```
-
-```
-:PackerInstall
-```
