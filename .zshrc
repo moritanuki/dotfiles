@@ -5,6 +5,8 @@
 # starship
 eval "$(starship init zsh)"
 
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 ################
 # aliases
@@ -27,5 +29,3 @@ alias gch='git checkout'
 
 # lazygit
 alias lg='lazygit'
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
